@@ -1,0 +1,832 @@
+/*
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+	
+	Eric Meyer					:: http://meyerweb.com
+	HTML5 Doctor				:: http://html5doctor.com
+	and the HTML5 Boilerplate	:: http://html5boilerplate.com
+	
+-------------------------------------------------------------------------------*/
+
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+article, aside, figure, footer, header, nav, section, details, summary {display: block;}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+
+/* Apply a natural box layout model to all elements: http://paulirish.com/2012/box-sizing-border-box-ftw/ */
+*, *:before, *:after {box-sizing: border-box;  -moz-box-sizing: border-box;}
+
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+img,
+object,
+embed {
+	max-width: 100%;
+	margin-top: 3px;
+}
+	
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted. 
+	don't forget to restore the bullets within content. */
+ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {content: ''; content: none;}
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+
+input[type="checkbox"] {
+	vertical-align: text-top;
+    height: 15px;
+    width: 15px;
+}
+.ie7 input[type="checkbox"] {vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+
+select, input, textarea {font: 99% sans-serif;}
+
+table {font-size: inherit; font: 100%;}
+
+small {font-size: 85%;}
+
+strong {font-weight: bold;}
+
+td, td img {vertical-align: top;} 
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable,
+label, 
+input[type=button], 
+input[type=submit], 
+input[type=file], 
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {width: auto; overflow: visible;}
+ 
+/* scale images in IE7 more attractively */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* prevent BG image flicker upon hover 
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+
+/* let's clear some floats */
+.clr:before, .clr:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+.clr:after { clear: both; }  
+.clr { zoom: 1; }  
+
+/* Main style
+-------------------------------------------------------------------------------*/
+* {outline:none; max-height:99999px;}
+body {
+	font-family: 'museo_sans_cyrl';
+	line-height: 1.2;
+	font-size: 16px;
+	min-width: 1000px;
+}
+.container {width:1000px; margin:0 auto; position:relative;}
+#header {
+	height: 95px;
+	background-color: #FFFFFF;
+}
+#header .container .logo {
+	padding-top: 11px;
+	padding-left: 18px;
+	float: left;
+}
+.kibt {float: left;
+padding-top: 35px;
+margin-left: 150px;}
+#header .container .phone {
+	float: right;
+	width: 320px;
+	padding-top: 37px;
+}
+#header .container .phone p {
+	float: left;
+	font-size: 17px;
+	line-height: 0.9;
+	margin-right: 5px;
+}
+.btn {
+	width: 146px;
+	height: 29px;
+	display: inline-block;
+	background-color: #fd5e02;
+	border-radius: 4px;
+	color: #fff;
+	text-align: center;
+	padding-top: 4px;
+	text-decoration: none;
+	border-bottom: 2px solid #ab4509;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+.btn:hover {
+	background-color: #ff7922;
+}
+.btn:active {
+	background-color: #fd5e02;
+	border: none;
+}
+#menu {
+	height: 39px;
+	padding-top: 14px;
+	padding-left: 37px;
+	background-color: #4C4C4C;
+	width: 100%;
+	top: 0px;
+}
+#menu .container a {
+	font-size: 12px;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	text-decoration: none;
+	margin-right: 12px;
+	float: left;
+}
+#menu .container a:hover,
+#menu .container a.active {
+    text-decoration: underline !important;
+}
+#menu .container .right {
+	float: right;
+	margin-right: 28px;
+}
+#first {
+	padding-top: 48px;
+	height: 576px;
+	background-image: url(../img/bg1.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+#first .container h1 {
+	font-size: 39px;
+	color: #007C9F;
+	text-align: center;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+#first .container .item {
+	width: 289px;
+	height: 381px;
+	float: left;
+	background-image: url(../img/w1.jpg);
+	background-repeat: no-repeat;
+	margin-top: 44px;
+	margin-left: 19px;
+	margin-right: 25px;
+	font-size: 16px;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding-top: 101px;
+	padding-left: 30px;
+	border-radius: 22px;
+	text-decoration: none;
+	display: block;
+}
+#first .container .item:nth-of-type(2) {
+	background-image: url(../img/w2.jpg);
+}
+#first .container .item:nth-of-type(3) {
+	background-image: url(../img/w3.jpg);
+}
+#first .container .item:hover {
+	opacity:0.9;
+}
+#first .container .item h3 {
+	font-weight: 700;
+}
+#offer {
+	height: 400px;
+	background-image: url(../img/bg2.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+#offer .container .block {
+	width: 560px;
+	height: 400px;
+	margin-left: 317px;
+	text-align: center;
+	color: #FFFFFF;
+	padding-top: 62px;
+}
+#offer .container .block h3 {
+	font-size: 34px;
+	font-weight: 700;
+}
+#offer .container .block p {
+	font-size: 23px;
+	margin-top: 12px;
+	line-height: 1.3;
+}
+#offer .container .block .btn {
+	cursor: pointer;
+	width: 352px;
+	height: 62px;
+	font-size: 35px;
+	padding-top: 6px;
+	margin-top: 29px;
+	border-radius: 8px;
+	border-bottom-width: 4px;
+}
+#mobile {
+	padding-top: 53px;
+	height: 400px;
+	background-color: #FFFFFF;
+	min-width: 1000px;
+
+}
+h2 {
+	font-size: 45px;
+	text-align: center;
+	font-weight: 700;
+}
+#mobile .container .icons {
+	background-image: url(../img/icons.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	margin-top: 18px;
+	padding-top: 129px;
+}
+#mobile .container .icons h3 {
+	float: left;
+	font-size: 19px;
+	text-align: center;
+	width: 200px;
+	margin-left: 42px;
+}
+#mobile h3:first-child {
+    margin-left: 0 !important;
+}
+#mobile .container .btn {
+	cursor: pointer;
+	width: 444px;
+	height: 46px;
+	font-size: 20px;
+	padding-top: 10px;
+	border-radius: 6px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 24px;
+	border-bottom-width: 3px;
+}
+#how {
+	padding-top: 43px;
+	height: 380px;
+	background-color: #FFFFFF;
+}
+#how .container .icons {
+	background-image: url(../img/how.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	margin-top: 26px;
+	padding-top: 96px;
+}
+#how .container .icons h3 {
+	float: left;
+	font-size: 15px;
+	text-align: center;
+	width: 200px;
+}
+#how .container .icons h3 .btn {
+	width: 199px;
+	cursor: pointer;
+	height: 36px;
+	font-size: 20px;
+	padding-top: 4px;
+	border-bottom-width: 3px;
+	margin-top: 24px;
+	margin-left: -7px;
+}
+#po {
+	padding-top: 61px;
+	height: 840px;
+	background-image: url(../img/bg3.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	overflow-y: hidden;
+}
+#po .container h2 {
+	margin-bottom: 65px;
+}
+#po .container .wrap {
+	width: 245px;
+	height: 245px;
+	text-align: center;
+	border-radius: 6px;
+	float: left;
+	margin-right: -20px;
+	margin-left: -25px;
+	padding-top: 24px;
+	position: relative;
+	margin-top: -30px;
+}
+#po .container .item {
+	width: 245px;
+	text-align: center;
+	border-radius: 6px;
+	float: left;
+	margin-right: -20px;
+	margin-left: -25px;
+	padding-top: 24px;
+	position: relative;
+	margin-top: -30px;
+	padding-bottom: 24px;
+}
+#po .container .item:hover {
+	background-color: rgba(255, 255, 255, 0.78);
+	z-index: 55;
+}
+#po .container .item:hover .btn {
+	display: block;
+}
+#po .container .item h3 {
+	font-size: 19px;
+	margin-top: 8px;
+	line-height: 1.3;
+}
+#po .container .item .btn {
+	width: 169px;
+	cursor: pointer;
+	height: 43px;
+	border-bottom-width: 3px;
+	border-radius: 6px;
+	font-size: 19px;
+	padding-top: 9px;
+	margin-top: 14px;
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+.giftblock {
+	height: 582px;
+	background-image: url(../img/bg4.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.giftblock .container .block {
+	width: 468px;
+	margin-left: 262px;
+	text-align: center;
+	color: #FFFFFF;
+	padding-top: 54px;
+}
+.giftblock .container .block h3 {
+	font-size: 26px;
+	line-height: 1.1;
+}
+.giftblock .container .block .descr {
+	font-size: 16px;
+	margin-top: 22px;
+	margin-bottom: 18px;
+}
+.giftblock .container .block .descr span {
+	text-transform: uppercase;
+	text-decoration: underline;
+}
+.giftblock .container .block form {
+	text-align: left;
+	padding-left: 67px;
+}
+.agreement{
+	font-size: 13px;
+}
+.agreement1{
+	margin-top: 5px;
+}
+form h4 {
+	font-size: 19px;
+	margin-bottom: 2px;
+	color: #FFFFFF;
+}
+form input {
+	outline: none;
+ 	width: 332px;
+  	border-radius: 7px;
+  	border: 2px solid #fff;
+  	padding: 10px;
+  	box-sizing: border-box;
+	height: 45px;
+	background-color: #2199d1;
+	margin-bottom: 9px;
+	font-family: inherit;
+	font-size: 17px;
+	color: #fff;
+	padding-left: 15px;
+}
+form textarea {
+	width: 280px;
+	height: 202px;
+	margin-top: 4px;
+	border: 2px solid #fff;
+	background-color: #2199d1;
+	border-radius: 8px;
+	margin-bottom: 9px;
+	font-family: inherit;
+	font-size: 17px;
+	color: #fff;
+	padding-left: 15px;
+	padding-top: 8px;
+}
+.form__error {
+    color: black;
+ 	text-align: center;
+  	font-size: 15px;
+	margin-top: 2px;
+    margin-bottom: 7px;
+    display: none;
+}
+.form__error2 {
+    color: black;
+ 	text-align: left;
+  	font-size: 15px;
+	margin-top: 2px;
+    margin-bottom: 7px;
+    display: none;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #fff;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #fff;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #fff;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #fff;
+}
+form .btn {
+	width: 332px;
+	height: 52px;
+	border-bottom-width: 5px;
+	border-radius: 7px;
+	font-size: 27px;
+	font-family: inherit;
+	padding-top: 0px;
+	padding-bottom: 3px;
+	margin-top: 12px;
+    margin-bottom: -12px;
+}
+form .btn2 {
+	width: 332px;
+	height: 52px;
+	display: inline-block;
+	background-color: #fd5e02;
+	border-bottom-width: 5px;
+	border-bottom: 2px solid #ab4509;
+	border-radius: 7px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	font-size: 27px;
+	font-family: inherit;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	padding-top: 4px;
+	padding-bottom: 3px;
+	margin-top: 12px;
+    margin-bottom: -12px;
+	margin-left: 28%;
+}
+
+#what {
+	padding-top: 60px;
+	height: 472px;
+	background-color: #FFFFFF;
+}
+#what .container .icons {
+	background-image: url(../img/what.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	margin-top: 58px;
+	padding-top: 143px;
+
+}
+#what .container .icons h3 {
+	float: left;
+	font-size: 17px;
+	text-align: center;
+	width: 250px;
+	line-height: 1.3;
+}
+#install {
+	padding-top: 56px;
+	height: 548px;
+	background-image: url(../img/bg5.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+#install .container h2 {
+	line-height: 1;
+	margin-bottom: 46px;
+}
+#install .container .wrap {
+	width: 225px;
+	height: 240px;
+	text-align: center;
+	border-radius: 6px;
+	float: left;
+	margin-right: -30px;
+	margin-left: -30px;
+	padding-top: 24px;
+	position: relative;
+}
+#install .container .item {
+	width: 225px;
+	text-align: center;
+	border-radius: 6px;
+	float: left;
+	margin-right: -30px;
+	margin-left: -30px;
+	padding-top: 24px;
+	position: relative;
+	padding-bottom: 24px;
+}
+#install .container .item:hover {
+	background-color: rgba(255, 255, 255, 0.78);
+	z-index: 55;
+}
+#install .container .item:hover .btn {
+	display: block;
+}
+#install .container .item h3 {
+	font-size: 16px;
+	margin-top: 4px;
+	line-height: 1.3;
+	margin-bottom: 0px;
+}
+#install .container .item .btn {
+	cursor: pointer;
+	width: 155px;
+	height: 40px;
+	border-bottom-width: 3px;
+	border-radius: 6px;
+	font-size: 16px;
+	padding-top: 10px;
+	margin-top: 14px;
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+#install .container .descr {
+	text-align: center;
+	font-size: 20px;
+}
+#install .container .descr span {
+	font-weight: 700;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+}
+#partners {
+	padding-top: 60px;
+	height: 360px;
+	background-color: #FFFFFF;
+}
+#partners .container img {
+	margin-top: 36px;
+	margin-left: 44px;
+}
+#questions {
+	padding-top: 67px;
+	padding-bottom: 93px;
+	background-color: #F4F2F3;
+}
+#questions .container .side {
+	width: 50%;
+	float: left;
+	margin-top: 50px;
+	padding-left: 40px;
+}
+#questions .container .side .item .title {
+	font-size: 21px;
+	line-height: 1;
+	color: #1B7CC0;
+	background-image: url(../img/q.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 44px;
+	display: table-cell;
+	height: 37px;
+	vertical-align: middle;
+}
+#questions .container .side .item .text {
+	width: 418px;
+	border-radius: 8px;
+	margin-top: 8px;
+	font-size: 17px;
+	padding-left: 18px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #FFFFFF;
+	position: relative;
+}
+#questions .container .side .item .text:after {
+	content: '';
+	display: block;
+	width: 31px;
+	height: 27px;
+	background-image: url(../img/corner.png);
+	position: absolute;
+	bottom: -27px;
+	right: 27px;
+}
+#questions .container .side .item {
+	margin-bottom: 48px;
+}
+#questions .container .btn {
+	cursor: pointer;
+	width: 248px;
+	height: 48px;
+	font-size: 22px;
+	padding-top: 9px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-bottom-width: 3px;
+	border-radius: 6px;
+}
+#footer {
+	height: 134px;
+	border-top: 5px solid #1B8DC1;
+	background-color: #FFFFFF;
+}
+#footer .container .phone {
+	float: left;
+	width: 189px;
+	height:71px;
+	border-right: 3px solid #000000;
+	margin-top: 29px;
+	padding-left: 23px;
+}
+#footer .container .phone p {
+	font-size: 17px;
+	line-height: 1;
+	margin-bottom: 5px;
+}
+#footer .container .info {
+	float: left;
+	font-size: 17px;
+	margin-top: 28px;
+	line-height: 1.1;
+	margin-left: 13px;
+	
+}
+#footer .container .info p {
+	margin-top: 10px;
+}
+#footer .container .info p:first-child {
+    margin-top: 0 !important;
+}
+#footer .container .dev {
+	float: right;
+	position: relative;
+	width: 340px;
+	padding-top: 53px;
+}
+#footer .container .dev a {
+	position: absolute;
+	top: 23px;
+	left: 119px;
+}
+#footer .container .dev a:hover {
+	opacity: 0.5;
+}
+.reveal-modal .title {
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 18px;
+}
+.reveal-modal .title p {
+	font-size: 34px;
+}
+#myModal2 form .left {
+	float: left;
+	margin-top: 15px;
+}
+#myModal2 form .right {
+	    float: right;
+  		margin-top: -30%;
+    	margin-right: -8%;
+}
+#myModal2 form .btn {
+	margin-left: auto;
+	margin-right: -50%;
+	display: block;
+}
+#myModal2 .btn {
+	margin-left: 28% !important;
+}
+.entry{
+	width: 50%;
+    margin-left: 25%;
+	margin-top: 10;
+}
+#text-1{
+	margin-top: 20;
+    margin-bottom: 20;
+    text-align: justify;
+}
+#text-2{
+	font-size: 21px;
+    font-weight: 800;
+	padding: 25;
+}
+
+input:valid:not(:placeholder-shown) {
+  border-color: green;
+}
+
+input:invalid:not(:placeholder-shown) {
+  border-color: red;
+}
+textarea:valid:not(:placeholder-shown) {
+  border-color: green;
+}
+
+textarea:invalid:not(:placeholder-shown) {
+  border-color: red;
+}
+input:invalid:not(:placeholder-shown) + .form__error {
+  display: block;
+}
+input:invalid:not(:placeholder-shown) + .form__error2 {
+  display: block;
+}
+.social a {
+    display: block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+	color: #fff;
+    background: #1B8DC1;
+}
+.telegram a:hover {
+	background: #3cb1e7;
+	color: #fff;
+}

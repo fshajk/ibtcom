@@ -1,0 +1,73 @@
+.animate-title {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.animate-links {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+.animate-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    display: inline-block;
+}
+
+/* Анимации при появлении в viewport */
+.animate-item.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Кейфреймы анимаций */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Дополнительные стили для плавности */
+.item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 15px;
+}
+
+.item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Анимация кнопок */
+.btn {
+    transition: all 0.5s ease;
+    transform: scale(1);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-submit {
+    transition: none;
+    transform: none;
+}
+
+.btn-submit:hover {
+    transform: none;
+}

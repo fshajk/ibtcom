@@ -1,0 +1,40 @@
+<div id="myModal2" class="reveal-modal">
+    <div class="title">
+        <p>Оставьте заявку</p>
+        И наши менеджеры свяжутся с вами в ближайшее время
+    </div>
+    <form action="/submit_form" method="post" class="form" id="form2">
+        <input type="hidden" name="redirect_url" value="{{ request.url }}">
+        <input name="submission_reason" type="hidden" value="Вопрос" />
+
+        <div class="left">
+            <h4>Имя</h4>
+            <input type="text" name="name" placeholder="Введите ваше имя"
+                   pattern="[A-Za-zА-Яа-яЁё]+(\s+[A-Za-zА-Яа-яЁё]+)?"
+                   minlength="3" maxlength="30" autocomplete="on" required />
+
+            <h4>Телефон</h4>
+            <input type="tel" name="phone" placeholder="Введите ваш номер телефона"
+                   pattern="^\+?[78][\-\(]?\d{3}[\-\)]?\d{3}[\-]?\d{2}[\-]?\d{2}$"
+                   minlength="11" maxlength="18" autocomplete="on" required>
+            <span class="form__error2">Нужен формат телефона 89123456789</span>
+
+            <h4>E-Mail</h4>
+            <input type="email" name="email" placeholder="Введите ваш e-mail"
+                   maxlength="30" autocomplete="on" required />
+
+            <div class="right">
+                <h4>Вопрос</h4>
+                <textarea name="comment" placeholder="Введите ваш вопрос" required></textarea>
+            </div>
+
+            <div class="agreement1">
+                <input type="checkbox" name="agreement" autocomplete="off" required />
+                <span class="agreement">Я согласен(а) с <a href="/?page_id=117" target="_blank">Политикой конфиденциальности</a></span>
+            </div>
+
+            <input type="submit" name="submit_form" class="btn btn-submit" value="Оставить заявку" />
+        </div>
+    </form>
+    <a class="close-reveal-modal"><img src="static/img/close.png" alt="" /></a>
+</div>

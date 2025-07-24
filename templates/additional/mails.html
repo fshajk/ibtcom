@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список заявок</title>
+    <link rel="icon" href="static/img/favicon.webp" type="image/webp" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .action-column {
+            width: 100px;
+            text-align: center;
+        }
+        .table-hover tbody tr:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+        .empty-message {
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #6c757d;
+        }
+        /* Новые стили для решения проблемы */
+        .comment-column {
+            max-width: 300px; /* Ограничиваем максимальную ширину */
+            white-space: nowrap; /* Запрещаем перенос строк */
+            overflow: hidden; /* Скрываем выходящий за пределы текст */
+            text-overflow: ellipsis; /* Добавляем многоточие в конце */
+        }
+        .table-responsive {
+            overflow-x: auto;
+        }
+        @media (min-width: 992px) {
+            .comment-column {
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="mb-4">Список заявок</h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Время</th>
+                        <th>Имя</th>
+                        <th>Телефон</th>
+                        <th>E-Mail</th>
+                        <th>Причина</th>
+                        <th>Вопрос</th>
+                        <th>Удалить</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for mail in mails %}
+                    <tr>
+                        <td>{{ mail.id }}</td>
+                        <td>{{ mail.time.strftime('%Y-%m-%d %H:%M') }}</td>
+                        <td>{{ mail.name }}</td>
+                        <td>{{ mail.phone }}</td>
+                        <td>{{ mail.email }}</td>
+                        <td>{{ mail.submission_reason }}</td>
+                        <td class="comment-column" title="{{ mail.comment }}">{{ mail.comment }}</td>
+                        <td class="action-column">
+                            <button onclick="confirmDelete({{ mail.id }})" class="btn btn-danger btn-sm">
+                                Удалить
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% if not mails  %}
+            <div class="empty-message">
+                Заявки не найдены
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <script>
+        function confirmDelete(mailId) {
+            if (confirm(`Вы уверены, что хотите удалить заявку с ID ${mailId}?`)) {
+                window.location.href = `/mails/delete/${mailId}`;
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
