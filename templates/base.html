@@ -2,36 +2,44 @@
 <html lang="ru">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=1100" />
+        <meta name="viewport" content="width=device-width initial-scale=1.0" />
         <title>IBTCOM - оптимизация бизнеса</title>
         <link rel="icon" href="static/img/favicon.webp" type="image/webp" />
         <link rel="stylesheet" href="static/css/fonts.css" />
         <link rel="stylesheet" href="static/css/main.css" />
-        <link rel="stylesheet" href="static/css/reveal.css" />
         <link rel="stylesheet" href="static/css/animations.css" />
+        <link rel="stylesheet" href="static/css/modals/reveal.css" />
+        <link rel="stylesheet" href="static/css/modals/elements.css" />
+        <link rel="stylesheet" href="static/css/modals/specific.css" />
+        {% block specific_styles %}{% endblock %}
         <script defer src="static/js/lib/jquery-3.6.0.min.js"></script>
         <script defer src="static/js/lib/jquery.reveal.js"></script>
         <script defer src="static/js/animations.js"></script>
-        <script defer src="static/js/main.js"></script>
+        <script defer src="static/js/modal-forms.js"></script>
     </head>
     <body>
-        <div id="header">
-            <div class="container">
+        <header>
+            <div class="main-wrapper">
                 <div class="logo">
                     <img src="static/img/logo.png" alt="logo" />
                 </div>
-                <div class="kibt">
+                <div class="description">
                     <p>Компания Инновационных <br />Бизнес Технологий</p>
                 </div>
-                <div class="phone">
+                <div class="contacts">
                     <p>+7(3822) 97-79-97 <br />ibtcom@ibtcom.ru</p>
                     <a href="" class="btn" data-reveal-id="myModal" onclick="$('#submission_reason').val('Заказать звонок');">Заказать звонок</a>
                 </div>
             </div>
-        </div>
-        <div id="menu">
-            <div class="container">
-                <ul>
+        </header>
+        <nav>
+            <div class="main-wrapper">
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-list" id="nav-list">
                     <li>
                         <a href="/">Главная</a>
                     </li>
@@ -50,21 +58,22 @@
                     <li>
                         <a href="/questions">ВОПРОСЫ</a>
                     </li>
-                    <li>
-                        <a href="" class="right" data-reveal-id="myModal" onclick="$('#submission_reason').val('Получить консультацию специалиста');">
-                            Получить консультацию специалиста
-                        </a>
-                    </li>
                 </ul>
+                <div class="right">
+                    <a href="" data-reveal-id="myModal" onclick="$('#submission_reason').val('Получить консультацию специалиста');">
+                        Получить консультацию специалиста
+                    </a>
+                </div>
             </div>
-        </div>
-        <div id="content">
-            {% block content %}
-            {% endblock %}
-        </div>
-        <div id="footer">
-            <div class="container">
-                <div class="phone">
+        </nav>
+        <main>
+            <div class="main-wrapper">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+        <footer>
+            <div class="main-wrapper">
+                <div class="contacts">
                     <p>+7 (3822) 97-79-97<br />ibtcom@ibtcom.ru</p>
                     <a href="" class="btn" data-reveal-id="myModal" onclick="$('#submission_reason').val('Заказать звонок');">Заказать звонок</a>
                 </div>
@@ -73,7 +82,7 @@
                     <p>ИНН 7017275599/КПП 701701001</p>
                     <div class="social">
                         <div class="telegram">
-                            <a href="//t.me/ibtcom" target="_blank">
+                            <a href="https://t.me/ibtcom" target="_blank" rel="noopener noreferrer" title="Написать в Telegram">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.19 7.006L5.184 11.308C4.428 11.594 4.43 12.018 5.047 12.202L8.153 13.245L15.592 8.78C15.914 8.586 16.204 8.706 15.966 8.928L10.303 14.204H10.301L10.303 14.205L10.034 17.378C10.348 17.378 10.493 17.23 10.68 17.05L12.47 15.322L15.576 17.486C16.162 17.806 16.584 17.634 16.726 16.962L18.928 8.042C19.138 7.182 18.582 6.798 17.19 7.006Z" fill="white"/>
                                 </svg>
@@ -82,9 +91,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </footer>
         {% include 'modals/form1.html' %}
-        {% include 'modals/form2.html' %}
         {% include 'modals/thanks.html' %}
+        {% block specific_modals %}{% endblock %}
     </body>
 </html>

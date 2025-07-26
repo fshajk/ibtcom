@@ -1,0 +1,119 @@
+.agreement{
+	font-size: 13px;
+}
+.agreement1{
+	margin-top: 5px;
+}
+form h4 {
+	margin-bottom: 2px;
+	font-size: 19px;
+	color: #FFFFFF;
+}
+form input.modal {
+  	box-sizing: border-box;
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+  	padding-left: 15px;
+    margin-bottom: 9px;
+    outline: none;
+    background-color: #2199d1;
+  	border-radius: 7px;
+  	border: 2px solid #fff;
+	font-family: inherit;
+	font-size: 17px;
+	color: #fff;
+}
+form input.modal-submit {
+    display: block;
+	width: 100%;
+	height: 52px;
+    padding: 0 10px 3px 15px;
+    margin: 12px auto -12px auto;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 5px solid #ab4509;
+	border-radius: 7px;
+	font-size: 27px;
+	font-family: inherit;
+	background-color: #fd5e02;
+	color: #fff;
+    text-align: center;
+    text-decoration: none;
+}
+form input.modal-submit:active {
+	background-color: #fd5e02;
+	border: none;
+}
+form textarea {
+	width: 100%;
+	height: 202px;
+	resize: none;
+	margin-top: 4px;
+	border: 2px solid #fff;
+	background-color: #2199d1;
+	border-radius: 8px;
+	padding-left: 15px;
+	padding-top: 8px;
+	margin-bottom: 9px;
+	font-family: inherit;
+	font-size: 17px;
+	color: #fff;
+}
+textarea:focus {
+  outline: none;
+}
+.reveal-modal .title {
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 18px;
+}
+.reveal-modal .title p {
+	font-size: 34px;
+}
+#text-1{
+	margin-top: 20;
+    margin-bottom: 20;
+    text-align: justify;
+}
+#text-2{
+	font-size: 21px;
+    font-weight: 800;
+	padding: 25;
+}
+.form__error {
+    color: black;
+ 	text-align: center;
+  	font-size: 15px;
+	margin-top: 2px;
+    margin-bottom: 7px;
+    display: none;
+}
+.form__error2 {
+    color: black;
+ 	text-align: left;
+  	font-size: 15px;
+	margin-top: 2px;
+    margin-bottom: 7px;
+    display: none;
+}
+input:valid:not(:placeholder-shown):not(input[type="submit"]) {
+    border-color: green;
+}
+input:invalid:not(:placeholder-shown) {
+    border-color: red;
+}
+textarea:valid:not(:placeholder-shown) {
+    border-color: green;
+}
+textarea:invalid:not(:placeholder-shown) {
+	border-color: red;
+}
+input:invalid:not(:placeholder-shown) + .form__error {
+    display: block;
+}
+input:invalid:not(:placeholder-shown) + .form__error2 {
+    display: block;
+}

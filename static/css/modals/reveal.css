@@ -1,0 +1,46 @@
+.reveal-modal-bg {
+    position: fixed;
+	top: 0;
+	left: 0;
+    display: none;
+	height: 100%;
+	width: 100%;
+	z-index: 100;
+	background: #000;
+	background: rgba(0, 0, 0, .8);
+}
+.reveal-modal {
+	visibility: hidden;
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	z-index: 101;
+	width: fit-content;
+	height: fit-content;
+	min-width: 360px;
+	margin: 100px auto 40px auto;
+}
+.reveal-modal .inner {
+    padding: 40px 70px 30px 70px;
+    margin: 0 20px 0 20px;
+	border-radius: 24px;
+	background: linear-gradient(135deg, #2393CC 0%, #1487B7 50%, #03799F 100%);
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+	-box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+}
+.reveal-modal .close-reveal-modal {
+    position: absolute;
+	top: -25px;
+	right: 0px;
+	font-size: 22px;
+	line-height: .5;
+	color: #aaa;
+	text-shadow: 0 -1px 1px rbga(0, 0, 0, .6);
+	font-weight: bold;
+	cursor: pointer;
+}
+@media (max-width:604px) {
+    .reveal-modal .inner {
+        padding: 40px 30px 30px 30px;
+    }
+}

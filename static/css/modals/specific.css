@@ -1,0 +1,56 @@
+#myModal {
+    max-width: 509px;
+}
+#myModal2 {
+    width: 770px;
+}
+#myModal2 .inner {
+    padding-right: 50px;
+    padding-left: 50px;
+}
+#myModal2 .modal-submit {
+    max-width: 332px;
+}
+#myModal2 .flex-container-row {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#myModal2 .left {
+    width: 332px;
+}
+#myModal2 .right {
+    width: 250px;
+}
+@media (max-width:906px) {
+    #myModal2 {
+        width: fit-content;
+    }
+    #myModal2 .left {
+        width: 100%;
+    }
+    #myModal2 .right {
+        width: 100%;
+    }
+}
+@media (max-width:604px) {
+    #myModal2 .inner {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+}
+#myModal3 {
+    width: 509px;
+    margin: 350px auto auto auto;
+}
+@media (max-width:855px) {
+    #myModal3 {
+        margin: 100px auto 20px auto;
+    }
+}
+@media (max-width:604px) {
+    #myModal3 {
+        width: fit-content;
+    }
+}

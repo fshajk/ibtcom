@@ -14,8 +14,9 @@ app.jinja_env.globals.update(request=request)
 
 @app.route("/")
 @app.route("/index")
+@app.route("/first")
 def index():
-    return render_template('index.html')
+    return render_template('first.html')
 
 
 @app.route("/offer")

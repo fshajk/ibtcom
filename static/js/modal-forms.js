@@ -46,14 +46,3 @@ $(".btnon").click(function() {
 	var value=$(this).attr("rel");
   	$('#submission_reason').val(value);
 });
-
-
-
-
-
-
-
-
-
-
-
