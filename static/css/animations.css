@@ -60,35 +60,3 @@
 .btn-submit:hover {
     transform: none;
 }
-/* Анимация кнопоки меню в nav панели */
-.menu-toggle.active span:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-.menu-toggle.active span:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-.menu-toggle {
-    transition: all 0.3s ease;
-}
-.menu-toggle:hover span {
-    background: #4CAF50; 
-    transform: scale(1.1);
-    transition: all 0.3s ease; 
-}
-.menu-toggle.a:hover span {
-    background: #4CAF50; 
-    transform: scale(1.1);
-    transition: all 0.3s ease; 
-}
-.menu-toggle:hover {
-    transform: translateY(-1px); 
-}
-.menu-toggle span {
-    transform-origin: center; /* Чтобы анимация масштабировалась из центра */
-}
-.menu-toggle.active:hover span {
-    background: white; 
-}

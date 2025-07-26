@@ -20,24 +20,3 @@ window.addEventListener('load', function() {
     // И при скролле
     window.addEventListener('scroll', checkAnimation);
 });
-
-/* Анимация кнопоки меню */
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('mobile-menu');
-    const navList = document.getElementById('nav-list');
-    
-    menuToggle.addEventListener('click', function() {
-        this.classList.toggle('active');
-        navList.classList.toggle('active');
-    });
-    
-    // Закрывать меню при клике на пункт (для мобильных)
-    document.querySelectorAll('.nav-list a').forEach(item => {
-        item.addEventListener('click', function() {
-            if (window.innerWidth <= 768) {
-                menuToggle.classList.remove('active');
-                navList.classList.remove('active');
-            }
-        });
-    });
-});
